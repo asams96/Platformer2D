@@ -27,6 +27,36 @@ public class Main
 		cleanUp();
 	}
 	
+	private static void initDisplay()
+	{
+		try
+		{
+			Display.setDisplayMode(new DisplayMode(WIDTH,HEIGHT));
+			Display.create();
+			Keyboard.create();
+			Display.setVSyncEnabled(true);	
+		} catch (LWJGLException e)
+		{
+			e.printStackTrace();
+		}
+	}
+
+	private static void initGL()
+	{
+		glMatrixMode(GL_PROJECTION);
+		glLoadIdentity();
+		glOrtho(0,Display.getWidth(),0,Display.getHeight(),-1,1);
+		glMatrixMode(GL_MODELVIEW);
+		glDisable(GL_DEPTH_TEST);
+		glClearColor(0.0f,0.0f,0.0f,1.0f);
+	}
+
+	private static void initGame()
+	{
+		game = new Game();
+		
+	}
+
 	private static void gameLoop()
 	{
 		while(!Display.isCloseRequested())
@@ -34,9 +64,16 @@ public class Main
 			getInput();
 			update();
 			render();
+			
 		}
 	}
 	
+	private static void cleanUp()
+	{
+		Display.destroy();
+		Keyboard.destroy();
+	}
+
 	private static void getInput()
 	{
 		game.getInput();
@@ -54,50 +91,6 @@ public class Main
 		
 		Display.update();
 		Display.sync(60);
-	}
-	
-	private static void initGL()
-	{
-		glMatrixMode(GL_PROJECTION);
-		glLoadIdentity();
-		glOrtho(0,Display.getWidth(),0,Display.getHeight(), 1,-1);
-		glMatrixMode(GL_MODELVIEW);
-		
-		glDisable(GL_DEPTH_TEST);
-		
-		glClearColor(0.0f,0.0f,0.0f,0.0f);
-	}
-	
-
-	
-	private static void initGame()
-	{
-		game = new Game();
-	}
-
-
-
-
-
-
-	private static void cleanUp()
-	{
-		Display.destroy();
-		Keyboard.destroy();
-	}
-	
-	private static void initDisplay()
-	{
-		try
-		{
-			Display.setDisplayMode(new DisplayMode(WIDTH,HEIGHT));
-			Display.create();
-			Keyboard.create();
-			Display.setVSyncEnabled(true);	
-		} catch (LWJGLException e)
-		{
-			e.printStackTrace();
-		}
 	}
 	
 

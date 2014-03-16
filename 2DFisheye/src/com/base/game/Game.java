@@ -16,13 +16,15 @@ public class Game
 	public Game()
 	{
 		objects = new ArrayList<GameObject>();
-		player = new Player(Display.getWidth() / 2 - Player.SIZE, Display.getHeight() / 2 - Player.SIZE );
+		player = new Player(Display.getWidth()/2-Player.SIZE/2, Display.getHeight()/2-Player.SIZE/2 );
 		objects.add(player);
+		
 	}
 
 	public void getInput()
 	{
 		player.getInput();
+
 	}
 
 	public void update()

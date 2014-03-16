@@ -28,10 +28,10 @@ public class Sprite
 		glColor3f(0,1,1);
 		glBegin(GL_QUADS);
 		{
-			glVertex2f(0,0);
-			glVertex2f(0,sy);
+			glVertex2f(0.0f,0.0f);
+			glVertex2f(0.0f,sy);
 			glVertex2f(sx,sy);
-			glVertex2f(sx,0);
+			glVertex2f(sx,0.0f);
 		}
 		glEnd();
 		
