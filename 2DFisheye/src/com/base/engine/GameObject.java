@@ -2,7 +2,7 @@ package com.base.engine;
 import static org.lwjgl.opengl.GL11.*;
 
 
-public class GameObject
+public abstract class GameObject
 {
 	protected float x;
 	protected float y;
@@ -19,7 +19,15 @@ public class GameObject
 	{
 
 	}
-
+	
+	protected void init(float x, float y, float r, float g, float b, float sx, float sy)
+	{
+		this.x = x;
+		this.y = y;
+		this.spr = new Sprite(r,g,b,sx,sy);
+		
+	}
+	
 	public void render()
 	{
 		glPushMatrix();
@@ -60,10 +68,10 @@ public class GameObject
 		return spr.getSY();
 	}
 	
-	protected void init(float x, float y, float r, float g, float b, float sx, float sy)
+	protected void setSprite(Sprite sprite)
 	{
-		this.x = x;
-		this.y = y;
-		this.spr = new Sprite(r,g,b,x,y);
+		this.spr = sprite;
 	}
+	
+
 }
