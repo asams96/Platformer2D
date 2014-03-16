@@ -19,6 +19,7 @@ public class Animation
 		{
 			curFrame++;
 			curFrame %= frames.size();
+			
 		}
 	}
 }

@@ -20,6 +20,7 @@ public class Frame
 		
 		if(numDisplayed >= length)
 		{
+			
 			numDisplayed = 0;
 			return true;
 		}

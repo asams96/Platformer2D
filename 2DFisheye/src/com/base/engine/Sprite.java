@@ -25,7 +25,7 @@ public class Sprite
 	
 	public void render()
 	{
-		glColor3f(r,g,b);
+		glColor3f(0,1,1);
 		glBegin(GL_QUADS);
 		{
 			glVertex2f(0,0);
@@ -34,6 +34,7 @@ public class Sprite
 			glVertex2f(sx,0);
 		}
 		glEnd();
+		
 	}
 
 	public float getSX()
@@ -54,5 +55,35 @@ public class Sprite
 	public void setSY(float sy)
 	{
 		this.sy = sy;
+	}
+
+	public float getR()
+	{
+		return r;
+	}
+
+	public void setR(float r)
+	{
+		this.r = r;
+	}
+
+	public float getG()
+	{
+		return g;
+	}
+
+	public void setG(float g)
+	{
+		this.g = g;
+	}
+
+	public float getB()
+	{
+		return b;
+	}
+
+	public void setB(float b)
+	{
+		this.b = b;
 	}
 }
