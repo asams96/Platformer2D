@@ -1,9 +1,7 @@
 package com.base.gameobjects;
 
 import org.lwjgl.input.Keyboard;
-
 import com.base.engine.GameObject;
-import com.base.engine.Input;
 
 public class Player extends GameObject
 {
@@ -19,20 +17,20 @@ public class Player extends GameObject
 	
 	public void getInput()
 	{
-		if(Input.getKeyDown(Keyboard.KEY_W))
+		if(Keyboard.isKeyDown(Keyboard.KEY_UP))
 			move(0,1);
-		if(Input.getKeyDown(Keyboard.KEY_A))
+		if(Keyboard.isKeyDown(Keyboard.KEY_LEFT))
 			move(-1,0);
-		if(Input.getKeyDown(Keyboard.KEY_S))
+		if(Keyboard.isKeyDown(Keyboard.KEY_DOWN))
 			move(0,-1);
-		if(Input.getKeyDown(Keyboard.KEY_D))
+		if(Keyboard.isKeyDown(Keyboard.KEY_RIGHT))
 			move(1,0);
 	}
 	
 	private void move(float magX, float magY)
 	{
-		x += getSpeed() + magX;
-		y += getSpeed() + magY;
+		x += getSpeed() * magX;
+		y += getSpeed() * magY;
 	}
 	
 	public float getSpeed()

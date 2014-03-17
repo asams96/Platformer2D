@@ -48,7 +48,7 @@ public class Main
 		glOrtho(0,Display.getWidth(),0,Display.getHeight(),-1,1);
 		glMatrixMode(GL_MODELVIEW);
 		glDisable(GL_DEPTH_TEST);
-		glClearColor(0.0f,0.0f,0.0f,1.0f);
+		glClearColor(0.5f,1.0f,0.0f,1.0f);
 	}
 
 	private static void initGame()
@@ -81,14 +81,14 @@ public class Main
 	
 	private static void update()
 	{
-		
+		game.update();
 	}
 	
 	public static void render()
 	{
 		glClear(GL_COLOR_BUFFER_BIT);;
 		glLoadIdentity();
-		
+		game.render();
 		Display.update();
 		Display.sync(60);
 	}
