@@ -5,7 +5,7 @@ import com.base.engine.GameObject;
 
 public class Player extends GameObject
 {
-	public static final int SIZE = 32;
+	public static final int SIZE = 16;
 	
 	public Player(float x, float y)
 	{
@@ -35,6 +35,6 @@ public class Player extends GameObject
 	
 	public float getSpeed()
 	{
-		return 4f;
+		return 10f;
 	}
 }

@@ -7,7 +7,7 @@ public abstract class GameObject
 	protected float x;
 	protected float y;
 	protected Sprite spr;
-	
+	public float theta = 300f;
 
 	public void input()
 	{
@@ -29,13 +29,15 @@ public abstract class GameObject
 	}
 	
 	public void render()
-	{
-		glPushMatrix();
-		{
+	{	
 		glTranslatef(x,y,0);
+//		glPushMatrix();
+		{
+		theta += 50;
+			glRotatef(theta,0,0,1);	
 		spr.render();
 		}
-		glPopMatrix();
+//		glPopMatrix();
 	}
 
 	public float getX()
