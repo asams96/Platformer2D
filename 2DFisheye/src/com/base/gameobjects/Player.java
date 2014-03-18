@@ -5,14 +5,14 @@ import com.base.engine.GameObject;
 
 public class Player extends GameObject
 {
-	public static final int SIZE = 16;
+	public static final int SIZE = 512;
 	
 	public Player(float x, float y)
 	{
 		this.x = x;
 		this.y = y;
 
-		init(x,y,0.1f,1f,0.25f,SIZE,SIZE);
+		init(x,y,"res/test2.png",SIZE,SIZE);
 	}
 	
 	public void getInput()

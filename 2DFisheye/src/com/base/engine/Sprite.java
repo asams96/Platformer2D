@@ -2,6 +2,12 @@ package com.base.engine;
 
 import static org.lwjgl.opengl.GL11.*;
 
+import java.io.IOException;
+
+import org.newdawn.slick.opengl.Texture;
+import org.newdawn.slick.opengl.TextureLoader;
+import org.newdawn.slick.util.ResourceLoader;
+
 public class Sprite
 {
 	private float sx;
@@ -10,7 +16,7 @@ public class Sprite
 	private float r;
 	private float g;
 	private float b;
-
+	private Texture texture;
 	
 	
 	public Sprite( float r, float g, float b, float sy, float sx)
@@ -23,19 +29,33 @@ public class Sprite
 		
 	}
 	
+	public Sprite( String filename, float sy, float sx)
+	{
+		try
+		{
+			init(filename);
+		} catch (IOException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		this.sy = sy;
+		this.sx = sx;
+		
+	}
+	
 	public void render()
 	{	
-		glColor3f(0.5f,1,1);
 		glBegin(GL_QUADS);
 		{	
-
-			glColor3f(1,0,0);
+			glBindTexture(GL_TEXTURE_2D,texture.getTextureID());
+			glTexCoord2f(1,1);
 			glVertex2f(0.0f,0.0f);
-			glColor3f(0,1,0);
+			glTexCoord2f(1,0);
 			glVertex2f(0.0f,sy);
-			glColor3f(0,0,1);
+			glTexCoord2f(0,0);
 			glVertex2f(sx,sy);
-			glColor3f(.5f,0f,.5f);
+			glTexCoord2f(0,1);
 			glVertex2f(sx,0.0f);
 
 		}
@@ -43,6 +63,14 @@ public class Sprite
 
 		
 	}
+
+	
+	public void init(String filename) throws IOException 
+	{
+		texture = TextureLoader.getTexture("PNG", ResourceLoader.getResourceAsStream(filename));
+		texture.setTextureFilter(GL_NEAREST);
+	}
+	
 
 	public float getSX()
 	{
