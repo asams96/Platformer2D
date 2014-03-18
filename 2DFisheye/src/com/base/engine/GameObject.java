@@ -1,17 +1,20 @@
 package com.base.engine;
 import static org.lwjgl.opengl.GL11.*;
 
+import java.util.Random;
+
 
 public abstract class GameObject
 {
 	protected float x;
 	protected float y;
 	protected Sprite spr;
-
-
+    protected Random rand;
+	
 	public void input()
 	{
-	
+		
+
 		
 	}
 
@@ -38,13 +41,15 @@ public abstract class GameObject
 	
 	public void render()
 	{	
-		glRotatef(10f,0,0,12f);
+	
 		glPushMatrix();
 		{
 		glTranslatef(x,y,0);
 		spr.render();
 		}
 		glPopMatrix();
+
+
 	}
 
 	public float getX()
