@@ -12,6 +12,8 @@ public class Sprite
 {
 	private float sx;
 	private float sy;
+	private float tcox;
+	private float tcoy;
 
 	private float r;
 	private float g;
@@ -120,5 +122,25 @@ public class Sprite
 	public void setB(float b)
 	{
 		this.b = b;
+	}
+
+	public float getTcox()
+	{
+		return tcox;
+	}
+
+	public void setTcox(float tcox)
+	{
+		this.tcox = tcox;
+	}
+
+	public float getTcoy()
+	{
+		return tcoy;
+	}
+
+	public void setTcoy(float tcoy)
+	{
+		this.tcoy = tcoy;
 	}
 }

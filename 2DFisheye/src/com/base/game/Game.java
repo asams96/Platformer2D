@@ -2,6 +2,7 @@ package com.base.game;
 
 import java.util.ArrayList;
 
+import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.Display;
 
 import com.base.engine.GameObject;
@@ -16,7 +17,7 @@ public class Game
 	public Game()
 	{
 		objects = new ArrayList<GameObject>();
-		player = new Player(Display.getWidth()/2-Player.SIZE/2, Display.getHeight()/2-Player.SIZE/2 );
+		player = new Player("res/Untitled.png",0,0,Keyboard.KEY_UP,Keyboard.KEY_DOWN,Keyboard.KEY_LEFT,Keyboard.KEY_RIGHT );
 		objects.add(player);
 		
 	}

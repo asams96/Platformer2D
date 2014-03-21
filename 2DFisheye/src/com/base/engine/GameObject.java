@@ -23,6 +23,17 @@ public abstract class GameObject
 
 	}
 	
+	public GameObject()
+	{
+		
+	}
+	
+	
+	public GameObject(String spritefilename, float x, float y, float sx, float sy)
+	{
+		init(x,y,spritefilename,sx,sy);
+	}
+	
 	protected void init(float x, float y, float r, float g, float b, float sx, float sy)
 	{
 		this.x = x;
@@ -39,6 +50,14 @@ public abstract class GameObject
 		
 	}
 	
+	protected void scrollSprite(float speedx, float speedy)
+	{
+		glMatrixMode(GL_TEXTURE);
+		glTranslatef(x*speedx,y*speedy,0.0f);
+		glMatrixMode(GL_MODELVIEW);
+	}
+	
+	
 	public void render()
 	{	
 	
@@ -50,6 +69,23 @@ public abstract class GameObject
 		glPopMatrix();
 
 
+	}
+	
+	protected void move(float magX, float magY)
+	{
+		x += getSpeed() * magX;
+		y += getSpeed() * magY;
+	}
+	
+	protected void move(GameObject go, float magX, float magY)
+	{
+		go.x += getSpeed() * magX;
+		go.y += getSpeed() * magY;
+	}
+	
+	protected float getSpeed()
+	{
+		return 20f;
 	}
 
 	public float getX()
