@@ -34,22 +34,22 @@ public class Player extends GameObject
 	
 	public void getInput()
 	{
-//		if(Keyboard.isKeyDown(up))
-//		move(0,1);
-//	if(Keyboard.isKeyDown(left))
-//		move(-1,0);
-//	if(Keyboard.isKeyDown(down))
-//		move(0,-1);
-//	if(Keyboard.isKeyDown(right))
-//		move(1,0);
-	if(Keyboard.isKeyDown(down))
-		scrollSprite(0,0.0001f);
-	if(Keyboard.isKeyDown(right))
-		scrollSprite(-0.0001f,0);
-	if(Keyboard.isKeyDown(up))
-		scrollSprite(0,-0.0001f);
+		if(Keyboard.isKeyDown(up))
+		move(0,1);
 	if(Keyboard.isKeyDown(left))
-		scrollSprite(0.0001f,0);
+		move(-1,0);
+	if(Keyboard.isKeyDown(down))
+		move(0,-1);
+	if(Keyboard.isKeyDown(right))
+		move(1,0);
+//	if(Keyboard.isKeyDown(down))
+//		scrollSprite(0,0.0001f);
+//	if(Keyboard.isKeyDown(right))
+//		scrollSprite(-0.0001f,0);
+//	if(Keyboard.isKeyDown(up))
+//		scrollSprite(0,-0.0001f);
+//	if(Keyboard.isKeyDown(left))
+//		scrollSprite(0.0001f,0);
 	}
 	
 

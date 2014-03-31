@@ -59,6 +59,8 @@ public class Sprite
 			glVertex2f(sx,sy);
 			glTexCoord2f(0,1);
 			glVertex2f(sx,0.0f);
+			glMatrixMode(GL_TEXTURE);
+			
 
 		}
 		glEnd();

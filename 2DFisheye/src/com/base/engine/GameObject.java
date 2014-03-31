@@ -1,7 +1,6 @@
 package com.base.engine;
 import static org.lwjgl.opengl.GL11.*;
 
-import java.util.Random;
 
 
 public abstract class GameObject
@@ -9,7 +8,6 @@ public abstract class GameObject
 	protected float x;
 	protected float y;
 	protected Sprite spr;
-    protected Random rand;
 	
 	public void input()
 	{
