@@ -17,7 +17,7 @@ public class Game
 	public Game()
 	{
 		objects = new ArrayList<GameObject>();
-		player = new Player("res/tree.png",Display.getWidth()/5,Display.getHeight()/5,Keyboard.KEY_UP,Keyboard.KEY_DOWN,Keyboard.KEY_LEFT,Keyboard.KEY_RIGHT );
+		player = new Player("res/Untitled.png",Display.getWidth()/5,Display.getHeight()/5,Keyboard.KEY_UP,Keyboard.KEY_DOWN,Keyboard.KEY_LEFT,Keyboard.KEY_RIGHT );
 		objects.add(player);
 		
 	}

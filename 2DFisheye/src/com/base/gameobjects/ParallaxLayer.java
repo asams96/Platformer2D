@@ -1,5 +1,7 @@
 package com.base.gameobjects;
 
+import org.lwjgl.input.Keyboard;
+
 import com.base.engine.GameObject;
 
 public class ParallaxLayer extends GameObject
@@ -20,7 +22,14 @@ public class ParallaxLayer extends GameObject
 	
 	public void moveTex(float spdx, float spdy)
 	{
-		scrollSprite(this.speedx*spdx, this.speedy*spdy);
+		if(Keyboard.isKeyDown(Player.down))
+			scrollSprite(0,speedy);
+		if(Keyboard.isKeyDown(Player.right))
+			scrollSprite(-speedx,0);
+		if(Keyboard.isKeyDown(Player.up))
+			scrollSprite(0,-speedy);
+		if(Keyboard.isKeyDown(Player.left))
+			scrollSprite(speedx,0);
 	}
 
 

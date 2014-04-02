@@ -9,7 +9,7 @@ import static org.lwjgl.opengl.GL11.*;
 
 public class Main
 {
-	public static final int WIDTH = 800;
+	public static final int WIDTH = 1200;
 	public static final int HEIGHT = 600;
 	public static final String TITLE = "2D Test";
 	public static final double FRAME_CAP = 60.0;
