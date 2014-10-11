@@ -72,7 +72,6 @@ public class Sprite
 	public void init(String filename) throws IOException 
 	{
 		texture = TextureLoader.getTexture("PNG", ResourceLoader.getResourceAsStream(filename));
-		texture.setTextureFilter(GL_NEAREST);
 	}
 	
 
